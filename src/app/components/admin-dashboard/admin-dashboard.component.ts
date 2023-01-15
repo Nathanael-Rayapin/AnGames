@@ -7,7 +7,10 @@ import { BehaviorSubject } from 'rxjs';
 import { RemoveGameComponent } from 'src/app/layout/modal/remove-game/remove-game.component';
 import { UpdateGameComponent } from 'src/app/layout/modal/update-game/update-game.component';
 import { Game } from 'src/app/model/game/game.model';
-import { GameFeatureStoreActions, GameFeatureStoreState } from 'src/app/store/games/games.index';
+import {
+  GameFeatureStoreActions,
+  GameFeatureStoreState,
+} from 'src/app/store/games/games.index';
 import GamesList from '../../core/games.json';
 
 // import { GameFeatureStoreState } from 'src/app/store/games/games.index';

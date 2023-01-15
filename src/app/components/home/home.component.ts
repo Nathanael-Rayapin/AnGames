@@ -4,12 +4,10 @@ import { Router } from '@angular/router';
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
-  styleUrls: ['./home.component.scss']
+  styleUrls: ['./home.component.scss'],
 })
 export class HomeComponent {
-  constructor(
-    public router: Router
-  ) {}
+  constructor(public router: Router) {}
 
   onMainGames(): void {
     this.router.navigate([`/main-games`]);

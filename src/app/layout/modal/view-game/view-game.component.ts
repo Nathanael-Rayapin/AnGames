@@ -8,7 +8,7 @@ import { AuthService } from 'src/app/service/auth/auth.service';
 @Component({
   selector: 'app-view-game',
   templateUrl: './view-game.component.html',
-  styleUrls: ['./view-game.component.scss']
+  styleUrls: ['./view-game.component.scss'],
 })
 export class ViewGameComponent implements OnInit {
   isAuth$: Observable<boolean>;

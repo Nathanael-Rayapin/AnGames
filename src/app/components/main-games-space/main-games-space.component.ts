@@ -1,21 +1,32 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
+import { Store, select } from '@ngrx/store';
+import { Observable } from 'rxjs';
 import { ViewGameComponent } from 'src/app/layout/modal/view-game/view-game.component';
 import { Game } from 'src/app/model/game/game.model';
 import { SongService } from 'src/app/service/song/song.service';
-import GameList from '../../core/games.json';
+import {
+  GameFeatureStoreSelectors,
+  GameFeatureStoreState,
+} from 'src/app/store/games/games.index';
 
 @Component({
   selector: 'app-main-games-space',
   templateUrl: './main-games-space.component.html',
-  styleUrls: ['./main-games-space.component.scss']
+  styleUrls: ['./main-games-space.component.scss'],
 })
-export class MainGamesSpaceComponent {
-  games : Game[] = GameList;
+export class MainGamesSpaceComponent implements OnInit {
+  games$: Observable<Game[]>;
 
   constructor(
     public dialog: MatDialog,
-    public songService: SongService) {}
+    public songService: SongService,
+    private store: Store<GameFeatureStoreState.GameState>
+  ) {}
+
+  ngOnInit(): void {
+    this.games$ = this.store.pipe(select(GameFeatureStoreSelectors.selectAll));
+  }
 
   onView(game: Game) {
     this.songService.playTheme(game.main_theme);

@@ -7,13 +7,16 @@ import { RegisterComponent } from 'src/app/components/register/register.componen
 import { AuthData } from 'src/app/service/auth/auth.data';
 import { AuthService } from 'src/app/service/auth/auth.service';
 import { SongService } from 'src/app/service/song/song.service';
-import { AuthFeatureStoreActions, AuthFeatureStoreState } from 'src/app/store/auth/auth.index';
+import {
+  AuthFeatureStoreActions,
+  AuthFeatureStoreState,
+} from 'src/app/store/auth/auth.index';
 import { RegisterAnimationService } from '../../material/animation/register-animation';
 
 @Component({
   selector: 'app-navbar',
   templateUrl: './navbar.component.html',
-  styleUrls: ['./navbar.component.scss']
+  styleUrls: ['./navbar.component.scss'],
 })
 export class NavbarComponent implements OnInit {
   isAuth$: Observable<boolean>;
@@ -25,7 +28,8 @@ export class NavbarComponent implements OnInit {
     public authData: AuthData,
     public songService: SongService,
     private authService: AuthService,
-    private store: Store<AuthFeatureStoreState.AuthState>) {}
+    private store: Store<AuthFeatureStoreState.AuthState>
+  ) {}
 
   ngOnInit(): void {
     this.isAuth$ = this.authService.isAuth$;

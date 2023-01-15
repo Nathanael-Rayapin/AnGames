@@ -8,17 +8,40 @@
 }
 
 .games-container {
+  flex-wrap: wrap;
+
   .games-cards {
     height: 500px;
     border-radius: 15px;
 
-    img {
-      object-fit: cover;
-      object-position: center;
-      border-radius: 15px;
+    .one-card {
+      position: relative;
       box-shadow: rgba(255, 255, 255, 0.1) 0px 1px 1px 0px inset, rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
+      overflow: hidden;
+      transition: all 0.5s;
+
+      img {
+        object-fit: cover;
+        object-position: center;
+        border-radius: 15px;
+      }
+
+      p {
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        font-size: 18px;
+        background-color: rgba(0, 0, 0, 0.5);
+        border-bottom-left-radius: 15px;
+        border-bottom-right-radius: 15px;
+        transition: all 0.5s;
+      }
     }
   }
+}
+
+.games-container .games-cards .one-card:hover {
+  transform: scale(1.05);
 }
 
 .grabbable {
@@ -33,6 +56,7 @@
   cursor: -webkit-grabbing;
 }
 
+// Override Material Styling
 ::ng-deep .mat-mdc-dialog-container .mdc-dialog__surface {
   background: #fff !important;
   box-shadow: inset 2px 2px 4px #FFFFFF !important;
@@ -46,4 +70,11 @@
 
 ::ng-deep .drag-scroll-content {
   align-items: center;
+  flex-wrap: wrap;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+}
+
+::ng-deep .mat-mdc-form-field-icon-suffix {
+  padding-right: 20px !important;
 }

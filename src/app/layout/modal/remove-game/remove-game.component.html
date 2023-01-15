@@ -1,10 +1,10 @@
-<div class="container-fluid px-0">
-  <div class="row">
-    <div class="update-game col-12 d-flex justify-content-between px-0">
+<div class="container-fluid w-100 h-100 p-3">
+  <div class="row w-100 h-100 mx-0">
+    <div class="update-game col-12 d-flex justify-content-between">
       <div class="action col-4">
         <div class="game">
           <h4>What Game</h4>
-            <mat-form-field appearance="fill">
+            <mat-form-field appearance="fill" class="w-100">
               <mat-label>Choose a Game</mat-label>
               <mat-select [(ngModel)]="selectedGame" (selectionChange)="onPreview()">
                 <mat-option [value]="game.title" *ngFor="let game of (games$ | async)">

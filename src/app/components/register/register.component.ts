@@ -1,5 +1,8 @@
 import { Component } from '@angular/core';
-import { RegisterAnimation, RegisterAnimationService } from 'src/app/layout/material/animation/register-animation';
+import {
+  RegisterAnimation,
+  RegisterAnimationService,
+} from 'src/app/layout/material/animation/register-animation';
 
 @Component({
   selector: 'app-register',
