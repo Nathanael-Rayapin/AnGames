@@ -10,7 +10,6 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
-import { AuthFeatureStoreModule } from './store/auth/auth.module';
 import { MatTableModule } from '@angular/material/table';
 import { MatSelectModule } from '@angular/material/select';
 
@@ -26,6 +25,12 @@ import { ViewGameComponent } from './layout/modal/view-game/view-game.component'
 import { AdminDashboardComponent } from './components/admin-dashboard/admin-dashboard.component';
 import { UpdateGameComponent } from './layout/modal/update-game/update-game.component';
 import { RemoveGameComponent } from './layout/modal/remove-game/remove-game.component';
+import { EffectsModule } from '@ngrx/effects';
+import { AuthEffects } from './store/auth/auth.effect';
+import { GameEffects } from './store/games/games.effect';
+import { StoreModule } from '@ngrx/store';
+import { authReducer } from './store/auth/auth.reducer';
+import { gameReducer } from './store/games/games.reducer';
 
 @NgModule({
   declarations: [
@@ -54,7 +59,10 @@ import { RemoveGameComponent } from './layout/modal/remove-game/remove-game.comp
     DragScrollModule,
     MatTableModule,
     MatSelectModule,
-    AuthFeatureStoreModule,
+    EffectsModule.forRoot([]),
+    EffectsModule.forFeature([AuthEffects, GameEffects]),
+    StoreModule.forRoot({ auth: authReducer }),
+    StoreModule.forRoot({ game: gameReducer }),
     !environment.production
       ? StoreDevtoolsModule.instrument({ maxAge: 5 })
       : [],
