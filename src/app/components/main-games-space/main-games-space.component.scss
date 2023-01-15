@@ -1,0 +1,49 @@
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.games-container {
+  .games-cards {
+    height: 500px;
+    border-radius: 15px;
+
+    img {
+      object-fit: cover;
+      object-position: center;
+      border-radius: 15px;
+      box-shadow: rgba(255, 255, 255, 0.1) 0px 1px 1px 0px inset, rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
+    }
+  }
+}
+
+.grabbable {
+  cursor: grab;
+  cursor: -moz-grab;
+  cursor: -webkit-grab;
+}
+
+.grabbable:active {
+  cursor: grabbing;
+  cursor: -moz-grabbing;
+  cursor: -webkit-grabbing;
+}
+
+::ng-deep .mat-mdc-dialog-container .mdc-dialog__surface {
+  background: #fff !important;
+  box-shadow: inset 2px 2px 4px #FFFFFF !important;
+  backdrop-filter: blur(2px) !important;
+  border-radius: 15px !important;
+}
+
+::ng-deep .dropdown-toggle::after {
+  display: none;
+}
+
+::ng-deep .drag-scroll-content {
+  align-items: center;
+}

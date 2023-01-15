@@ -1,1 +1,9 @@
-<p>main-games-space works!</p>
+<div class="container-fluid h-100 position-relative">
+  <div class="row h-100">
+    <drag-scroll [scrollbar-hidden]="true" class="games-container overlay grabbable d-flex justify-content-between align-items-center px-5">
+        <div class="games-cards col-3 px-5" *ngFor="let game of games">
+          <img class="w-100 h-100" [src]="game.background_cover" (click)="onView(game)" alt="Game">
+        </div>
+    </drag-scroll>
+  </div>
+</div>

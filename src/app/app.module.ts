@@ -3,6 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
+import { DragScrollModule } from 'ngx-drag-scroll';
 import { MatDialogModule } from '@angular/material/dialog';
 import { FormsModule } from '@angular/forms';
 import { ReactiveFormsModule } from '@angular/forms';
@@ -19,6 +20,7 @@ import { NavbarComponent } from './layout/ui/navbar/navbar.component';
 import { environment } from 'src/environments/environment';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { MainGamesSpaceComponent } from './components/main-games-space/main-games-space.component';
+import { ViewGameComponent } from './layout/modal/view-game/view-game.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +29,8 @@ import { MainGamesSpaceComponent } from './components/main-games-space/main-game
     LoginComponent,
     SignupComponent,
     NavbarComponent,
-    MainGamesSpaceComponent
+    MainGamesSpaceComponent,
+    ViewGameComponent
   ],
   imports: [
     BrowserModule,
@@ -40,6 +43,7 @@ import { MainGamesSpaceComponent } from './components/main-games-space/main-game
     MatFormFieldModule,
     MatInputModule,
     MatSnackBarModule,
+    DragScrollModule,
     AuthFeatureStoreModule,
     !environment.production
       ? StoreDevtoolsModule.instrument({ maxAge: 5 })

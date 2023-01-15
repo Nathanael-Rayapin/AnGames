@@ -25,21 +25,21 @@ export class AuthService {
   }
 
   initAuth(): void {
-    if (localStorage.getItem('auth') === 'undefined') {
-      return localStorage.removeItem('auth');
-    }
+    if (typeof localStorage !== "undefined") {
+      console.log(localStorage);
 
-    const data = JSON.parse(localStorage.getItem('auth'));
-    if (data && data.idToken) {
-      this.token = data.idToken;
-      this.isAuth$.next(true);
+      const data = JSON.parse(localStorage.getItem('auth'));
+      if (data && data.idToken) {
+        this.token = data.idToken;
+        this.isAuth$.next(true);
 
-      this.currentUser$.next({
-        id: data.localId,
-        pseudo: data.displayName,
-        email: data.email,
-        password: null,
-      });
+        this.currentUser$.next({
+          id: data.localId,
+          pseudo: data.displayName,
+          email: data.email,
+          password: null,
+        });
+      }
     }
   }
 

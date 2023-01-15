@@ -1,0 +1,70 @@
+.game-container {
+  height: 84vh;
+
+  .game-cover img {
+    object-fit: cover;
+    object-position: center;
+    border-radius: 5px;
+  }
+
+  .description {
+    height: 100px;
+    overflow: auto;
+
+    span {
+      font-style: italic;
+    }
+  }
+}
+
+#reply-box {
+  height: 300px;
+  overflow: auto;
+  padding: 0 1em;
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+
+  .comment-container {
+    display: flex;
+  }
+
+  .comment-name {
+    font-size: 0.9em;
+    font-weight: 500;
+    margin-bottom: 0.2rem;
+  }
+
+  .comment {
+    border-radius: 1em;
+    background-color: rgb(240, 240, 240);
+    padding: 0.2rem 0.5rem;
+  }
+
+  .creator-comment {
+    background-color: #2ca1f6;
+    color: #fff;
+  }
+}
+
+.comment-form {
+  min-width: 150px;
+  max-width: 500px;
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  padding: 0;
+
+  .comment-full-width {
+    width: 100%;
+  }
+
+  .send-icon {
+    cursor: pointer;
+  }
+
+  .text-custom {
+    color: #2ca1f6;
+  }
+}

@@ -1,8 +1,12 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
+import { Store } from '@ngrx/store';
 import { Observable } from 'rxjs';
 import { RegisterComponent } from 'src/app/components/register/register.component';
+import { AuthData } from 'src/app/service/auth/auth.data';
+import { AuthService } from 'src/app/service/auth/auth.service';
 import { SongService } from 'src/app/service/song/song.service';
+import { AuthFeatureStoreActions, AuthFeatureStoreState } from 'src/app/store/auth/auth.index';
 import { RegisterAnimationService } from '../../material/animation/register-animation';
 
 @Component({
@@ -10,10 +14,20 @@ import { RegisterAnimationService } from '../../material/animation/register-anim
   templateUrl: './navbar.component.html',
   styleUrls: ['./navbar.component.scss']
 })
-export class NavbarComponent {
+export class NavbarComponent implements OnInit {
   isAuth$: Observable<boolean>;
 
-  constructor(public dialog: MatDialog,public registerAnimation: RegisterAnimationService, public songService: SongService) {}
+  constructor(
+    public dialog: MatDialog,
+    public registerAnimation: RegisterAnimationService,
+    public authData: AuthData,
+    public songService: SongService,
+    private authService: AuthService,
+    private store: Store<AuthFeatureStoreState.AuthState>) {}
+
+  ngOnInit(): void {
+    this.isAuth$ = this.authService.isAuth$;
+  }
 
   onAuth(value: string): void {
     switch (value) {
@@ -53,7 +67,6 @@ export class NavbarComponent {
   }
 
   onLogout(): void {
-    console.log("LOGOUT");
-    // this.store.dispatch(new AuthFeatureStoreActions.Logout());
+    this.store.dispatch(new AuthFeatureStoreActions.Logout());
   }
 }

@@ -36,7 +36,7 @@ export class AuthEffects {
       password: null,
     });
 
-    this.calculateRemainingTime(data.expiresIn);
+    // this.calculateRemainingTime(data.expiresIn);
   }
 
   setDataOff(): void {
@@ -92,8 +92,6 @@ export class AuthEffects {
       switchMap(action =>
         this.authService.login(action.payload).pipe(
           map((user: User | any) => {
-            console.log('ICI');
-
             this.snackbarService.openSnackBar('You are now Connected', 3);
             this.setDataOn(user);
 

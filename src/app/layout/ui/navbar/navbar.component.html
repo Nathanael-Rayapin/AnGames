@@ -17,16 +17,16 @@
       <!-- Power -->
       <div class="power col-9 d-flex justify-content-end align-items-center">
         <div class="user-connected d-none d-sm-block">
-          <p class="me-3 mb-0">Nathanaël</p>
+          <p class="me-3 mb-0">{{ authData.getCurrentEmail() }}</p>
         </div>
         <div class="dropdown">
           <button class="power_btn dropdown-toggle bg-white" type="button" data-bs-toggle="dropdown" aria-expanded="false">
             <i class="bi bi-power" [ngClass]="{'active': (isAuth$ | async)}"></i>
           </button>
           <ul class="dropdown-menu">
-            <li *ngIf="true"><a class="dropdown-item" (click)="onAuth('login')">Login</a></li>
-            <li *ngIf="true"><a class="dropdown-item" (click)="onAuth('signup')">Signup</a></li>
-            <li *ngIf="false"><a class="dropdown-item" (click)="onLogout()">Logout</a></li>
+            <li *ngIf="(isAuth$ | async) === false"><a class="dropdown-item" (click)="onAuth('login')">Login</a></li>
+            <li *ngIf="(isAuth$ | async) === false"><a class="dropdown-item" (click)="onAuth('signup')">Signup</a></li>
+            <li *ngIf="(isAuth$ | async) === true"><a class="dropdown-item" (click)="onLogout()">Logout</a></li>
           </ul>
         </div>
       </div>
