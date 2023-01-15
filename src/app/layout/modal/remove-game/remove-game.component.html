@@ -1,0 +1,27 @@
+<div class="container-fluid px-0">
+  <div class="row">
+    <div class="update-game col-12 d-flex justify-content-between px-0">
+      <div class="action col-4">
+        <div class="game">
+          <h4>What Game</h4>
+            <mat-form-field appearance="fill">
+              <mat-label>Choose a Game</mat-label>
+              <mat-select [(ngModel)]="selectedGame" (selectionChange)="onPreview()">
+                <mat-option [value]="game.title" *ngFor="let game of (games$ | async)">
+                  {{ game.title }}
+                </mat-option>
+              </mat-select>
+            </mat-form-field>
+        </div>
+        <div class="submit" *ngIf="selectedGame">
+          <button class="btn btn-danger py-2 px-5" (click)="onRemove()">Remove</button>
+        </div>
+      </div>
+      <div class="preview col-8">
+        <div class="px-2 h-100 mx-auto" id="post-preview" [ngClass]="selectedGame ? '' : 'hidden'">
+          <img id="game-preview-image" class="w-100 h-100" src="#" alt="Cover">
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

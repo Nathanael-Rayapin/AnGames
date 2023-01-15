@@ -1,0 +1,59 @@
+.action-button-container {
+  padding-top: 16px;
+  padding-bottom: 16px;
+}
+
+.action-button + .action-button {
+  margin-left: 8px;
+}
+
+.table-container {
+  border-radius: 15px;
+
+  .games-table {
+    background: transparent;
+    border-radius: 15px;
+
+    .games-tr th {
+      font-weight: 700;
+    }
+  }
+}
+
+
+
+.mat-column-id,
+.mat-column-title,
+.mat-column-background_cover,
+.mat-column-description,
+.mat-column-release_date,
+.mat-column-main_theme {
+  text-align: center;
+}
+
+.mat-column-title span {
+  font-weight: 700;
+}
+
+.mat-column-background_cover {
+  img {
+    object-fit: cover;
+    width: 200px;
+    height: 187.5px;
+  }
+}
+
+.mat-column-description {
+  padding-left: 20px;
+}
+
+.mat-column-main_theme {
+  width: 20px;
+}
+
+::ng-deep .mat-mdc-dialog-container .mdc-dialog__surface {
+  background: #fff !important;
+  box-shadow: inset 2px 2px 4px #FFFFFF !important;
+  backdrop-filter: blur(2px) !important;
+  border-radius: 15px !important;
+}

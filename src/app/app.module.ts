@@ -11,6 +11,8 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { AuthFeatureStoreModule } from './store/auth/auth.module';
+import { MatTableModule } from '@angular/material/table';
+import { MatSelectModule } from '@angular/material/select';
 
 import { AppComponent } from './app.component';
 import { RegisterComponent } from './components/register/register.component';
@@ -21,6 +23,9 @@ import { environment } from 'src/environments/environment';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { MainGamesSpaceComponent } from './components/main-games-space/main-games-space.component';
 import { ViewGameComponent } from './layout/modal/view-game/view-game.component';
+import { AdminDashboardComponent } from './components/admin-dashboard/admin-dashboard.component';
+import { UpdateGameComponent } from './layout/modal/update-game/update-game.component';
+import { RemoveGameComponent } from './layout/modal/remove-game/remove-game.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +35,10 @@ import { ViewGameComponent } from './layout/modal/view-game/view-game.component'
     SignupComponent,
     NavbarComponent,
     MainGamesSpaceComponent,
-    ViewGameComponent
+    ViewGameComponent,
+    AdminDashboardComponent,
+    UpdateGameComponent,
+    RemoveGameComponent,
   ],
   imports: [
     BrowserModule,
@@ -44,6 +52,8 @@ import { ViewGameComponent } from './layout/modal/view-game/view-game.component'
     MatInputModule,
     MatSnackBarModule,
     DragScrollModule,
+    MatTableModule,
+    MatSelectModule,
     AuthFeatureStoreModule,
     !environment.production
       ? StoreDevtoolsModule.instrument({ maxAge: 5 })

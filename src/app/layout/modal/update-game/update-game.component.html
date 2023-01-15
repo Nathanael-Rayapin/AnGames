@@ -1,0 +1,45 @@
+<div class="container-fluid w-100 h-100 p-3">
+  <div class="row w-100 h-100 mx-0">
+    <div class="update-game col-12 d-flex justify-content-between">
+      <div class="action col-4">
+        <div class="game">
+          <h4>What Game</h4>
+            <mat-form-field appearance="fill" class="w-100">
+              <mat-label>Choose a Game</mat-label>
+              <mat-select [(ngModel)]="selectedGame" (selectionChange)="onPreview()">
+                <mat-option [value]="game.title" *ngFor="let game of (games$ | async)">
+                  {{ game.title }}
+                </mat-option>
+              </mat-select>
+            </mat-form-field>
+        </div>
+        <div class="attribut" *ngIf="selectedGame">
+          <h4>What Attribut</h4>
+          <mat-form-field appearance="fill" class="w-100">
+            <mat-label>Choose an Attribut</mat-label>
+            <mat-select [(ngModel)]="selectedAttr">
+              <mat-option [value]="attr" *ngFor="let attr of attributs">
+                {{ attr }}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+        </div>
+        <div class="value" *ngIf="selectedAttr">
+          <h4>New {{selectedAttr}}</h4>
+          <mat-form-field class="example-form-field" class="w-100">
+            <mat-label>Value</mat-label>
+            <input matInput type="text" [(ngModel)]="value">
+          </mat-form-field>
+        </div>
+        <div class="submit" *ngIf="value">
+          <button class="btn btn-success py-2 px-5" (click)="onSave()">Save</button>
+        </div>
+      </div>
+      <div class="preview col-8">
+        <div class="px-2 h-100 mx-auto" id="post-preview" [ngClass]="selectedGame ? '' : 'hidden'">
+          <img id="game-preview-image" class="w-100 h-100" src="#" alt="Cover">
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
