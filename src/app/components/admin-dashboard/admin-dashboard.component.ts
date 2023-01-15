@@ -13,9 +13,6 @@ import {
 } from 'src/app/store/games/games.index';
 import GamesList from '../../core/games.json';
 
-// import { GameFeatureStoreState } from 'src/app/store/games/games.index';
-// import { GameFeatureStoreActions } from 'src/app/store/games/games.index';
-
 @Component({
   selector: 'app-admin-dashboard',
   templateUrl: './admin-dashboard.component.html',
@@ -86,6 +83,11 @@ export class AdminDashboardComponent implements OnInit {
 
     this.store.dispatch(new GameFeatureStoreActions.AddGame(updatedGame));
     this.isUpdating = false;
+    this.newCover = '';
+    this.newDescription = '';
+    this.newRelease = '';
+    this.newTitle = '';
+    this.newTheme = '';
   }
 
   updateGames(): void {

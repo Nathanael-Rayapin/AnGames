@@ -18,7 +18,7 @@ export class LoginComponent {
     private store: Store<AuthFeatureStoreState.AuthState>
   ) {}
 
-  onLogin(form: NgForm) {
+  onLogin(form: NgForm): void {
     this.store.dispatch(new AuthFeatureStoreActions.Login(form.value));
   }
 

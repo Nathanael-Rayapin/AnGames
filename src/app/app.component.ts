@@ -15,7 +15,7 @@ import {
   styleUrls: ['./app.component.scss'],
 })
 export class AppComponent {
-  title = 'angames-project';
+  title: string = 'angames-project';
 
   constructor(
     private gameStore: Store<GameFeatureStoreState.GameState>,

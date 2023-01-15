@@ -66,9 +66,6 @@ export class CommentEffects {
       switchMap(action =>
         this.commentService.addComment(action.payload).pipe(
           map((comment: CommentModel) => {
-            this.snackbarService.openSnackBar('Comment Added Successfully', 3);
-            console.log(comment);
-
             return new fromCommentActions.AddCommentSuccess(comment);
           }),
           catchError((err: string) => {

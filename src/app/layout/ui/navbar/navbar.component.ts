@@ -12,6 +12,7 @@ import {
   AuthFeatureStoreState,
 } from 'src/app/store/auth/auth.index';
 import { RegisterAnimationService } from '../../material/animation/register-animation';
+import { SnackBarService } from '../../material/snackbar/snackbar';
 
 @Component({
   selector: 'app-navbar',
@@ -27,6 +28,7 @@ export class NavbarComponent implements OnInit {
     public registerAnimation: RegisterAnimationService,
     public authData: AuthData,
     public songService: SongService,
+    private snackbarService: SnackBarService,
     private authService: AuthService,
     private store: Store<AuthFeatureStoreState.AuthState>
   ) {}
@@ -68,6 +70,9 @@ export class NavbarComponent implements OnInit {
   }
 
   onActivated(): void {
+    if (this.songService.isMuted) {
+      this.snackbarService.openSnackBar('Audio On! Click on a Game', 3);
+    }
     this.songService.isMuted = !this.songService.isMuted;
     this.songService.playTheme();
   }

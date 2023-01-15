@@ -12,6 +12,7 @@ export class SongService {
       this.Audio.muted;
       this.Audio.currentTime = 0;
     } else {
+      if (this.Audio.src === theme) return;
       this.Audio.src = theme;
       this.Audio.loop === true;
       this.Audio.play();

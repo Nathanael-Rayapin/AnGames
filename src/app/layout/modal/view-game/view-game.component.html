@@ -24,6 +24,9 @@
                 {{comment?.content}}</p>
             </div>
           </div>
+          <div class="no-comment" *ngIf="!comments?.length">
+            <p><strong>No comment in this Game, login and write one!</strong></p>
+          </div>
         </div>
         <form class="comment-form w-100" *ngIf="(isAuth$ | async)">
           <mat-form-field class="comment-full-width" appearance="fill">
