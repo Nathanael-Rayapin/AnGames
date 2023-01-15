@@ -3,7 +3,7 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false,
+  production: true,
   adminId: 'uI62sZNpr6RrXtYM00qbjdsulhG2',
   api: 'https://angames-project-default-rtdb.firebaseio.com/',
   signup_api:
