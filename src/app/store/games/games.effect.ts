@@ -3,7 +3,7 @@ import { Injectable } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { Router } from '@angular/router';
 import { Actions, createEffect, ofType } from '@ngrx/effects';
-import { Observable, catchError, map, of, switchMap, tap } from 'rxjs';
+import { Observable, catchError, map, of, switchMap } from 'rxjs';
 import { SnackBarService } from 'src/app/layout/material/snackbar/snackbar';
 import { Game } from 'src/app/model/game/game.model';
 import { GameService } from 'src/app/service/game/game.service';

@@ -1,43 +1,43 @@
 /* eslint-disable no-undef */
-import { GameState, gameAdapter, initialState } from './games.state';
-import { GameActions, GameActionsTypes } from './games.actions';
+import { CommentState, commentAdapter, initialState } from './comment.state';
+import { CommentActions, CommentActionsTypes } from './comment.action';
 
-export function gameReducer(
+export function commentReducer(
   state = initialState,
-  action: GameActions
-): GameState {
+  action: CommentActions
+): CommentState {
   switch (action.type) {
-    case GameActionsTypes.ADD:
+    case CommentActionsTypes.ADD:
       return {
         ...state,
         loading: true,
         error: null,
       };
-    case GameActionsTypes.ADD_SUCCESS:
-      return gameAdapter.addOne(action.payload, {
+    case CommentActionsTypes.ADD_SUCCESS:
+      return commentAdapter.addOne(action.payload, {
         ...state,
         loading: false,
         error: null,
       });
-    case GameActionsTypes.ADD_ERROR:
+    case CommentActionsTypes.ADD_ERROR:
       return {
         ...state,
         loading: false,
         error: action.payload,
       };
-    case GameActionsTypes.GET:
+    case CommentActionsTypes.GET:
       return {
         ...state,
         loading: true,
         error: null,
       };
-    case GameActionsTypes.GET_SUCCESS:
-      return gameAdapter.setAll(action.payload, {
+    case CommentActionsTypes.GET_SUCCESS:
+      return commentAdapter.setAll(action.payload, {
         ...state,
         loading: false,
         error: null,
       });
-    case GameActionsTypes.GET_ERROR:
+    case CommentActionsTypes.GET_ERROR:
       return {
         ...state,
         loading: false,

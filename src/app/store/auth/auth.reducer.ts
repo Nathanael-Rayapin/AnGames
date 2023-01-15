@@ -8,42 +8,36 @@ export function authReducer(
 ): AuthState {
   switch (action.type) {
     case AuthActionsTypes.SIGNUP:
-      console.log('BEGIN');
       return {
         ...state,
         loading: true,
         error: null,
       };
     case AuthActionsTypes.SIGNUP_SUCCESS:
-      console.log('SUCCESS');
       return authAdapter.addOne(action.payload, {
         ...state,
         loading: false,
         error: null,
       });
     case AuthActionsTypes.SIGNUP_ERROR:
-      console.log('ERROR');
       return {
         ...state,
         loading: false,
         error: action.payload,
       };
     case AuthActionsTypes.LOGIN:
-      console.log('LOGIN');
       return {
         ...state,
         loading: true,
         error: null,
       };
     case AuthActionsTypes.LOGIN_SUCCESS:
-      console.log('SUCCESS');
       return authAdapter.addOne(action.payload, {
         ...state,
         loading: false,
         error: null,
       });
     case AuthActionsTypes.LOGIN_ERROR:
-      console.log('ERROR');
       return {
         ...state,
         loading: false,
