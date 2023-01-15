@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
+import { Router } from '@angular/router';
 import { Store } from '@ngrx/store';
 import { Observable } from 'rxjs';
 import { RegisterComponent } from 'src/app/components/register/register.component';
@@ -18,6 +19,7 @@ export class NavbarComponent implements OnInit {
   isAuth$: Observable<boolean>;
 
   constructor(
+    public router: Router,
     public dialog: MatDialog,
     public registerAnimation: RegisterAnimationService,
     public authData: AuthData,
@@ -64,6 +66,10 @@ export class NavbarComponent implements OnInit {
   onActivated(): void {
     this.songService.isMuted = !this.songService.isMuted;
     this.songService.playTheme();
+  }
+
+  onHome(): void {
+    this.router.navigate(['/home']);
   }
 
   onLogout(): void {

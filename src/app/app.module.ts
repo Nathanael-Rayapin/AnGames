@@ -31,6 +31,7 @@ import { GameEffects } from './store/games/games.effect';
 import { StoreModule } from '@ngrx/store';
 import { authReducer } from './store/auth/auth.reducer';
 import { gameReducer } from './store/games/games.reducer';
+import { HomeComponent } from './components/home/home.component';
 
 @NgModule({
   declarations: [
@@ -44,6 +45,7 @@ import { gameReducer } from './store/games/games.reducer';
     AdminDashboardComponent,
     UpdateGameComponent,
     RemoveGameComponent,
+    HomeComponent,
   ],
   imports: [
     BrowserModule,

@@ -7,6 +7,7 @@ import { BehaviorSubject } from 'rxjs';
 import { RemoveGameComponent } from 'src/app/layout/modal/remove-game/remove-game.component';
 import { UpdateGameComponent } from 'src/app/layout/modal/update-game/update-game.component';
 import { Game } from 'src/app/model/game/game.model';
+import { GameFeatureStoreActions, GameFeatureStoreState } from 'src/app/store/games/games.index';
 import GamesList from '../../core/games.json';
 
 // import { GameFeatureStoreState } from 'src/app/store/games/games.index';
@@ -40,7 +41,7 @@ export class AdminDashboardComponent implements OnInit {
 
   constructor(
     public dialog: MatDialog,
-    // private store: Store<GameFeatureStoreState.GameState>
+    private store: Store<GameFeatureStoreState.GameState>
   ) {}
 
   ngOnInit(): void {}
@@ -80,7 +81,7 @@ export class AdminDashboardComponent implements OnInit {
     updatedGame.title = this.newTitle;
     updatedGame.main_theme = this.newTheme;
 
-    // this.store.dispatch(new GameFeatureStoreActions.AddGame(updatedGame));
+    this.store.dispatch(new GameFeatureStoreActions.AddGame(updatedGame));
     this.isUpdating = false;
   }
 

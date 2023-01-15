@@ -1,0 +1,71 @@
+.intro {
+  h1 {
+    font-size: 5rem;
+    letter-spacing: 1rem;
+
+    span {
+      opacity: 1;
+      display: inline-block;
+      animation: animate 1s linear forwards;
+      transition: all 0.5s;
+      cursor: pointer;
+    }
+  }
+
+  @keyframes animate {
+    0% {
+      opacity: 0;
+      transform: rotateY(90deg);
+      filter: blur(10px);
+    }
+    100% {
+      opacity: 1;
+      transform: rotateY(0deg);
+      filter: blur(0);
+    }
+  }
+}
+
+.intro h1:hover span:nth-child(2) {
+  margin-right: 10px;
+}
+
+.intro h1 span:nth-child(2)::after {
+  content: "'";
+  opacity: 0;
+  transition: letter-spacing 0.3s ease-out, opacity 0.3s ease-out;
+}
+
+.intro h1:hover span:nth-child(2)::after {
+  letter-spacing: normal;
+  opacity: 1;
+}
+
+.intro h1:hover span {
+  text-shadow: 0 0 10px #fff,
+  0 0 20px #fff,
+  0 0 40px #fff,
+  0 0 80px #fff,
+  0 0 120px #fff;
+}
+
+@media only screen and (max-width: 576px) {
+  .intro h1 {
+    font-size: 2rem;
+  }
+}
+
+@media only screen and (max-width: 340px) {
+  .intro h1 {
+    writing-mode: vertical-rl;
+    text-orientation: upright;
+  }
+
+  .intro h1 span {
+    text-shadow: 0 0 10px #fff,
+    0 0 20px #fff,
+    0 0 40px #fff,
+    0 0 80px #fff,
+    0 0 120px #fff;
+  }
+}
