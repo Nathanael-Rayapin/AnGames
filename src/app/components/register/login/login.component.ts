@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { NgForm } from '@angular/forms';
+import { Store } from '@ngrx/store';
 import { RegisterAnimationService } from 'src/app/layout/material/animation/register-animation';
+import { AuthFeatureStoreActions, AuthFeatureStoreState } from 'src/app/store/auth/auth.index';
 
 @Component({
   selector: 'app-login',
@@ -8,11 +10,12 @@ import { RegisterAnimationService } from 'src/app/layout/material/animation/regi
   styleUrls: ['./login.component.scss']
 })
 export class LoginComponent {
-  constructor(public registerAnimation: RegisterAnimationService) {}
+  constructor(
+    public registerAnimation: RegisterAnimationService,
+    private store: Store<AuthFeatureStoreState.AuthState>) {}
 
   onLogin(form: NgForm) {
-    console.log(form.value);
-    // this.store.dispatch(new AuthFeatureStoreActions.Login(form.value));
+    this.store.dispatch(new AuthFeatureStoreActions.Login(form.value));
   }
 
   // Animation
