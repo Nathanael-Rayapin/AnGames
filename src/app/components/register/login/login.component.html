@@ -1,0 +1,48 @@
+<form (submit)="onLogin(loginForm)" class="login-form col-12 m-0 w-100" #loginForm="ngForm">
+  <div class="title_form">
+    <h3><span>Login</span> Form</h3>
+  </div>
+
+  <div class="content_form mt-5">
+    <!-- Email -->
+    <div class="form-group email">
+      <div class="input-group">
+        <input
+        type="email"
+        class="form-control"
+        placeholder="Your email"
+        autocomplete="new-email"
+        name="email"
+        ngModel
+        required
+        email
+        #email="ngModel">
+      </div>
+    </div>
+
+    <!-- Password -->
+    <div class="form-group password">
+      <div class="input-group">
+        <input
+        type="password"
+        class="form-control"
+        placeholder="Your password"
+        name="password"
+        ngModel
+        required
+        pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
+        #password="ngModel">
+      </div>
+    </div>
+
+    <div class="submit_btn">
+      <button type="submit">
+        <span>Let's Go</span>
+      </button>
+    </div>
+
+    <div class="dont_have_account mt-4">
+      <p class="mb-0">Don't have an account ? <a class="pointer" (click)="toSignup()">Signup</a></p>
+    </div>
+  </div>
+</form>

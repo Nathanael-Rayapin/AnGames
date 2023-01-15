@@ -1,0 +1,11 @@
+.nav-container {
+  position: relative;
+  z-index: 999;
+}
+
+.main-games-container {
+  background: url('../assets/img/background_1.jpg');
+  background-position: center;
+  background-size: cover;
+  min-height: calc(100vh - 76px);
+}

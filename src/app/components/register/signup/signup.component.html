@@ -1,0 +1,105 @@
+<form (submit)="onSignup(signupForm)" class="signup-form col-12 m-0 w-100" #signupForm="ngForm">
+  <div class="title_form">
+    <h3><span>Signup</span> Form</h3>
+  </div>
+
+  <div class="content_form mt-5">
+    <!-- Pseudo -->
+    <div class="form-group pseudo">
+      <div class="input-group">
+        <input
+        type="text"
+        class="form-control"
+        placeholder="Your pseudo"
+        autocomplete="off"
+        name="pseudo"
+        ngModel
+        required
+        pattern="[A-Za-z\d\.]{3,10}"
+        minlength="4"
+        #pseudo="ngModel">
+      </div>
+      <!-- Error -->
+      <span *ngIf="pseudo.errors?.['required'] && pseudo.touched" class="text-danger">
+        Please enter a pseudo
+      </span>
+    </div>
+
+    <!-- Email -->
+    <div class="form-group email">
+      <div class="input-group">
+        <input
+        type="email"
+        class="form-control"
+        placeholder="Your email"
+        autocomplete="new-email"
+        name="email"
+        ngModel
+        required
+        email
+        #email="ngModel">
+      </div>
+      <!-- Error -->
+      <span *ngIf="email.errors?.['required'] && email.touched" class="text-danger">
+        Please enter a email
+      </span>
+      <span *ngIf="email.errors?.['email']" class="text-danger">
+        Please enter a valid email
+      </span>
+    </div>
+
+    <!-- Password -->
+    <div class="form-group password">
+      <div class="input-group">
+        <input
+        type="password"
+        class="form-control"
+        placeholder="Your password"
+        name="password"
+        ngModel
+        required
+        pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
+        #password="ngModel">
+      </div>
+      <!-- Error -->
+      <span *ngIf="password.errors?.['required'] && password.touched" class="text-danger">
+        Please enter a password
+      </span>
+      <span *ngIf="password.errors?.['pattern']" class="text-danger">
+        Your password must contain: 1 uppercase letter, 1 lowercase letter and 8 characters minimum
+      </span>
+    </div>
+
+    <!-- Confirm Password -->
+    <div class="form-group confirmPassword">
+      <div class="input-group">
+        <input
+        type="password"
+        class="form-control"
+        placeholder="Confirm your password"
+        name="confirmPassword"
+        ngModel
+        required
+        pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
+        #confirmPassword="ngModel">
+      </div>
+      <!-- Error -->
+      <span *ngIf="confirmPassword.errors?.['required'] && confirmPassword.touched" class="text-danger">
+        Please confirm your password
+      </span>
+      <span *ngIf="confirmPassword.touched && confirmPassword.value !== password.value" class="text-danger">
+        Password are not the same
+      </span>
+    </div>
+
+    <div class="submit_btn">
+      <button type="submit">
+        <span>Signup</span>
+      </button>
+    </div>
+  </div>
+
+  <div class="already_have_account mt-4">
+    <p class="mb-0">Already have an account ? <a class="pointer" (click)="toLogin()">Login</a></p>
+  </div>
+</form>
