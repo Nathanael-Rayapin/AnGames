@@ -11,6 +11,9 @@
 npm-debug.log
 yarn-error.log
 
+# Project
+src/enironments/*
+
 # IDEs and editors
 .idea/
 .project
