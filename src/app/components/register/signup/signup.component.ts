@@ -22,9 +22,9 @@ export class SignupComponent {
   // SignUp
   onSignup(form: NgForm) {
     if (form.invalid) return;
-    const { pseudo, email, password } = form.value;
+    const { email, password } = form.value;
     const id = Math.floor(Date.now() * Math.random()).toString();
-    const user = new User(id, pseudo, email, password);
+    const user = new User(id, email, password);
 
     this.store.dispatch(new AuthFeatureStoreActions.SignUp(user));
   }

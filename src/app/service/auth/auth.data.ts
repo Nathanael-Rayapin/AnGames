@@ -9,11 +9,15 @@ export class AuthData {
     return this.authService.currentUser$.value.id;
   }
 
-  getCurrentPseudo(): string {
-    return this.authService.currentUser$.value.pseudo;
+  getCustomPseudo(): string {
+    return this.authService.currentUser$.value.email.split('@')[0];
   }
 
   getCurrentEmail(): string {
     return this.authService.currentUser$.value.email;
+  }
+
+  getCurrentIsAuth(): boolean {
+    return this.authService.isAuth$.value;
   }
 }

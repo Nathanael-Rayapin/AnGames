@@ -7,37 +7,37 @@ export function commentReducer(
   action: CommentActions
 ): CommentState {
   switch (action.type) {
-    case CommentActionsTypes.ADD:
+    case CommentActionsTypes.ADD_COMMENT:
       return {
         ...state,
         loading: true,
         error: null,
       };
-    case CommentActionsTypes.ADD_SUCCESS:
+    case CommentActionsTypes.ADD_COMMENT_SUCCESS:
       return commentAdapter.addOne(action.payload, {
         ...state,
         loading: false,
         error: null,
       });
-    case CommentActionsTypes.ADD_ERROR:
+    case CommentActionsTypes.ADD_COMMENT_ERROR:
       return {
         ...state,
         loading: false,
         error: action.payload,
       };
-    case CommentActionsTypes.GET:
+    case CommentActionsTypes.GET_COMMENT:
       return {
         ...state,
         loading: true,
         error: null,
       };
-    case CommentActionsTypes.GET_SUCCESS:
+    case CommentActionsTypes.GET_COMMENT_SUCCESS:
       return commentAdapter.setAll(action.payload, {
         ...state,
         loading: false,
         error: null,
       });
-    case CommentActionsTypes.GET_ERROR:
+    case CommentActionsTypes.GET_COMMENT_ERROR:
       return {
         ...state,
         loading: false,

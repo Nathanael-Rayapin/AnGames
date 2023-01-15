@@ -1,13 +1,13 @@
 import { EntityAdapter, EntityState, createEntityAdapter } from '@ngrx/entity';
-import { Comment } from 'src/app/model/comment/comment.model';
+import { CommentModel } from 'src/app/model/comment/comment.model';
 
-export interface CommentState extends EntityState<Comment> {
+export interface CommentState extends EntityState<CommentModel> {
   loading: boolean;
   error: string | null;
 }
 
-export const commentAdapter: EntityAdapter<Comment> =
-  createEntityAdapter<Comment>();
+export const commentAdapter: EntityAdapter<CommentModel> =
+  createEntityAdapter<CommentModel>();
 
 const defaultComment = {
   loading: false,

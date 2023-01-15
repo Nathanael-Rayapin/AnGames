@@ -1,6 +1,10 @@
 import { Component } from '@angular/core';
 import { Store } from '@ngrx/store';
 import {
+  CommentFeatureStoreActions,
+  CommentFeatureStoreState,
+} from './store/comments/comment.index';
+import {
   GameFeatureStoreActions,
   GameFeatureStoreState,
 } from './store/games/games.index';
@@ -13,7 +17,11 @@ import {
 export class AppComponent {
   title = 'angames-project';
 
-  constructor(private store: Store<GameFeatureStoreState.GameState>) {
-    this.store.dispatch(new GameFeatureStoreActions.GetGame());
+  constructor(
+    private gameStore: Store<GameFeatureStoreState.GameState>,
+    private gameComment: Store<CommentFeatureStoreState.CommentState>
+  ) {
+    this.gameStore.dispatch(new GameFeatureStoreActions.GetGame());
+    this.gameComment.dispatch(new CommentFeatureStoreActions.GetComment());
   }
 }

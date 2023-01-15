@@ -1,21 +1,31 @@
-.game-container {
-  height: 84vh;
+.view-container {
+  background: #fff;
+  box-shadow: inset 2px 2px 4px #FFFFFF;
+  backdrop-filter: blur(2px);
+  border-radius: 15px;
+  overflow-x: hidden;
 
-  .game-cover img {
-    object-fit: cover;
-    object-position: center;
-    border-radius: 5px;
-  }
+  .game-container {
+    height: 84vh;
 
-  .description {
-    height: 100px;
-    overflow: auto;
+    .game-cover img {
+      object-fit: cover;
+      object-position: center;
+      border-radius: 5px;
+    }
 
-    span {
-      font-style: italic;
+    .description {
+      height: 100px;
+      overflow: auto;
+
+      span {
+        font-style: italic;
+      }
     }
   }
 }
+
+
 
 #reply-box {
   height: 300px;

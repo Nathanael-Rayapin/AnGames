@@ -7,37 +7,37 @@ export function gameReducer(
   action: GameActions
 ): GameState {
   switch (action.type) {
-    case GameActionsTypes.ADD:
+    case GameActionsTypes.ADD_GAME:
       return {
         ...state,
         loading: true,
         error: null,
       };
-    case GameActionsTypes.ADD_SUCCESS:
+    case GameActionsTypes.ADD_GAME_SUCCESS:
       return gameAdapter.addOne(action.payload, {
         ...state,
         loading: false,
         error: null,
       });
-    case GameActionsTypes.ADD_ERROR:
+    case GameActionsTypes.ADD_GAME_ERROR:
       return {
         ...state,
         loading: false,
         error: action.payload,
       };
-    case GameActionsTypes.GET:
+    case GameActionsTypes.GET_GAME:
       return {
         ...state,
         loading: true,
         error: null,
       };
-    case GameActionsTypes.GET_SUCCESS:
+    case GameActionsTypes.GET_GAME_SUCCESS:
       return gameAdapter.setAll(action.payload, {
         ...state,
         loading: false,
         error: null,
       });
-    case GameActionsTypes.GET_ERROR:
+    case GameActionsTypes.GET_GAME_ERROR:
       return {
         ...state,
         loading: false,

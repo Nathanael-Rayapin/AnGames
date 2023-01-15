@@ -1,16 +1,31 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
-import { Comment } from 'src/app/model/comment/comment.model';
+import { Store, select } from '@ngrx/store';
+import { BehaviorSubject, Observable } from 'rxjs';
+import { CommentModel } from 'src/app/model/comment/comment.model';
+import {
+  CommentFeatureStoreSelectors,
+  CommentFeatureStoreState,
+} from 'src/app/store/comments/comment.index';
 import { environment } from 'src/environments/environment';
 
 @Injectable({ providedIn: 'root' })
 export class CommentService {
   API = environment.api;
 
-  constructor(private http: HttpClient) {}
+  allComments$ = new BehaviorSubject<CommentModel[]>([]);
+  comments$: Observable<CommentModel[]>;
 
-  addComment(comment: Comment): Observable<object> {
+  constructor(
+    private http: HttpClient,
+    private store: Store<CommentFeatureStoreState.CommentState>
+  ) {
+    this.comments$ = this.store.pipe(
+      select(CommentFeatureStoreSelectors.selectAll)
+    );
+  }
+
+  addComment(comment: CommentModel): Observable<object> {
     return this.http.post(`${this.API}/comments.json`, comment);
   }
 

@@ -32,6 +32,8 @@ import { StoreModule } from '@ngrx/store';
 import { authReducer } from './store/auth/auth.reducer';
 import { gameReducer } from './store/games/games.reducer';
 import { HomeComponent } from './components/home/home.component';
+import { CommentEffects } from './store/comments/comment.effect';
+import { commentReducer } from './store/comments/comment.reducer';
 
 @NgModule({
   declarations: [
@@ -62,14 +64,17 @@ import { HomeComponent } from './components/home/home.component';
     MatTableModule,
     MatSelectModule,
     EffectsModule.forRoot([]),
-    EffectsModule.forFeature([AuthEffects, GameEffects]),
-    StoreModule.forRoot({ auth: authReducer }),
-    StoreModule.forRoot({ game: gameReducer }),
+    EffectsModule.forFeature([AuthEffects, GameEffects, CommentEffects]),
+    StoreModule.forRoot({
+      auth: authReducer,
+      game: gameReducer,
+      comment: commentReducer,
+    }),
     !environment.production
       ? StoreDevtoolsModule.instrument({ maxAge: 5 })
       : [],
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

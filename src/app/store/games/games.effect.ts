@@ -40,7 +40,9 @@ export class GameEffects {
 
   Get$: Observable<GameActions> = createEffect(() =>
     this.actions.pipe(
-      ofType<fromGameActions.GetGame>(fromGameActions.GameActionsTypes.GET),
+      ofType<fromGameActions.GetGame>(
+        fromGameActions.GameActionsTypes.GET_GAME
+      ),
       switchMap(() =>
         this.gameService.getGame().pipe(
           map((games: Game[]) => {
@@ -56,7 +58,9 @@ export class GameEffects {
 
   Add$: Observable<GameActions> = createEffect(() =>
     this.actions.pipe(
-      ofType<fromGameActions.AddGame>(fromGameActions.GameActionsTypes.ADD),
+      ofType<fromGameActions.AddGame>(
+        fromGameActions.GameActionsTypes.ADD_GAME
+      ),
       switchMap(action =>
         this.gameService.addGame(action.payload).pipe(
           map((game: Game) => {

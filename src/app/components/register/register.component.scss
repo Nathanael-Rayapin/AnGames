@@ -1,10 +1,18 @@
-.register {
-  position: relative;
-  overflow: hidden;
+.register-container {
+  background-color: rgba(255, 255, 255, 0.7);
+  box-shadow: inset 2px 2px 4px #FFFFFF;
+  backdrop-filter: blur(2px);
+  border-radius: 15px;
 
-  .form-container {
+  .register {
     position: relative;
-    height: 535px;
-    padding: 1rem;
+    overflow: hidden;
+
+    .form-container {
+      position: relative;
+      height: 535px;
+      padding: 1rem;
+    }
   }
 }
+

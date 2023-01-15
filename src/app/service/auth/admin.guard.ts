@@ -22,6 +22,7 @@ export class AdminGuard implements CanActivate {
           resolve(true);
         } else {
           reject(false);
+          this.router.navigate(['/home']);
         }
       });
     });

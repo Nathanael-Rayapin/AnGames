@@ -1,4 +1,4 @@
-export class Comment {
+export class CommentModel {
   gameId: number;
   id: string;
   pseudo: string;

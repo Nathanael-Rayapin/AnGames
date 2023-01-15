@@ -31,7 +31,6 @@ export class AuthEffects {
 
     this.authService.currentUser$.next({
       id: data.localId,
-      pseudo: data.displayName,
       email: data.email,
       password: null,
     });
@@ -46,7 +45,6 @@ export class AuthEffects {
 
       this.authService.currentUser$.next({
         id: null,
-        pseudo: null,
         email: null,
         password: null,
       });
@@ -96,7 +94,7 @@ export class AuthEffects {
             this.setDataOn(user);
 
             this.dialog.closeAll();
-            this.router.navigate([`/main-games`]);
+            this.router.navigate([`/home`]);
             return new fromAuthActions.LoginSuccess(user);
           }),
           catchError((err: string) => {

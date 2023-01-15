@@ -15,7 +15,6 @@ export class AuthService {
   isAuth$ = new BehaviorSubject<boolean>(false);
   currentUser$ = new BehaviorSubject<User>({
     id: null,
-    pseudo: null,
     email: null,
     password: null,
   });
@@ -25,7 +24,7 @@ export class AuthService {
   }
 
   initAuth(): void {
-    if (typeof localStorage !== "undefined") {
+    if (typeof localStorage !== 'undefined') {
       console.log(localStorage);
 
       const data = JSON.parse(localStorage.getItem('auth'));
@@ -35,7 +34,6 @@ export class AuthService {
 
         this.currentUser$.next({
           id: data.localId,
-          pseudo: data.displayName,
           email: data.email,
           password: null,
         });

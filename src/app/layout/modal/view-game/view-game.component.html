@@ -1,6 +1,6 @@
 <!-- Modal Game -->
-<div class="row w-100">
-  <div class="game-container col-12 d-flex justify-content-between pe-0">
+<div class="row w-100 view-container mx-0">
+  <div class="game-container col-12 d-flex justify-content-between px-0">
     <!-- Image -->
     <div class="d-none d-lg-block col-lg-9 game-cover p-4">
       <img [src]="gameData['background_cover']" class="w-100 h-100" alt="Publication">
@@ -16,12 +16,12 @@
       <hr>
       <!-- Comment Input -->
       <div class="row">
-        <div id="reply-box">
+        <div id="reply-box" class="h-100">
           <div *ngFor="let comment of comments" [ngClass]="{'comment-container': true}">
             <div>
-              <p class="comment-name">{{comment?.creator}}</p>
+              <p class="comment-name">{{comment?.pseudo | titlecase}}</p>
               <p [ngClass]="{'comment': true, 'creator-comment': isCommentCreator(comment)}">
-                {{comment?.comment}}</p>
+                {{comment?.content}}</p>
             </div>
           </div>
         </div>

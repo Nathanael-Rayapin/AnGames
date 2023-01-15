@@ -5,7 +5,7 @@ import { Router } from '@angular/router';
 import { Actions, createEffect, ofType } from '@ngrx/effects';
 import { Observable, catchError, map, of, switchMap } from 'rxjs';
 import { SnackBarService } from 'src/app/layout/material/snackbar/snackbar';
-import { Comment } from 'src/app/model/comment/comment.model';
+import { CommentModel } from 'src/app/model/comment/comment.model';
 import { CommentService } from 'src/app/service/comment/comment.service';
 
 import * as fromCommentActions from './comment.action';
@@ -21,7 +21,7 @@ export class CommentEffects {
     private snackbarService: SnackBarService
   ) {}
 
-  buildComments(comments: Comment[]): Comment[] {
+  buildComments(comments: CommentModel[]): CommentModel[] {
     const loadedComments = [];
 
     for (const key in comments) {
@@ -33,17 +33,19 @@ export class CommentEffects {
       });
     }
 
+    // Ngrx Selector Dosn't return all Values... Behavior alternative way
+    this.commentService.allComments$.next(loadedComments);
     return loadedComments;
   }
 
   Get$: Observable<CommentActions> = createEffect(() =>
     this.actions.pipe(
       ofType<fromCommentActions.GetComment>(
-        fromCommentActions.CommentActionsTypes.GET
+        fromCommentActions.CommentActionsTypes.GET_COMMENT
       ),
       switchMap(() =>
         this.commentService.getComment().pipe(
-          map((comments: Comment[]) => {
+          map((comments: CommentModel[]) => {
             return new fromCommentActions.GetCommentSuccess(
               this.buildComments(comments)
             );
@@ -59,12 +61,14 @@ export class CommentEffects {
   Add$: Observable<CommentActions> = createEffect(() =>
     this.actions.pipe(
       ofType<fromCommentActions.AddComment>(
-        fromCommentActions.CommentActionsTypes.ADD
+        fromCommentActions.CommentActionsTypes.ADD_COMMENT
       ),
       switchMap(action =>
         this.commentService.addComment(action.payload).pipe(
-          map((comment: Comment) => {
+          map((comment: CommentModel) => {
             this.snackbarService.openSnackBar('Comment Added Successfully', 3);
+            console.log(comment);
+
             return new fromCommentActions.AddCommentSuccess(comment);
           }),
           catchError((err: string) => {

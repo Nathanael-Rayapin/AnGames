@@ -1,7 +1,7 @@
 import { createFeatureSelector, createSelector } from '@ngrx/store';
 import { EntitySelectors, EntityState } from '@ngrx/entity/src/models';
 import { CommentState, commentAdapter } from './comment.state';
-import { Comment } from 'src/app/model/comment/comment.model';
+import { CommentModel } from 'src/app/model/comment/comment.model';
 
 // Call the Store we want use
 export const getCommentState = createFeatureSelector<CommentState>('comment');
@@ -11,8 +11,8 @@ export const {
   selectAll: selectAllComments,
   selectTotal: count,
 }: EntitySelectors<
-  Comment,
-  EntityState<Comment>
+  CommentModel,
+  EntityState<CommentModel>
 > = commentAdapter.getSelectors();
 
 // Create Other Selectors

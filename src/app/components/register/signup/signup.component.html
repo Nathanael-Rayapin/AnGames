@@ -4,27 +4,6 @@
   </div>
 
   <div class="content_form mt-5">
-    <!-- Pseudo -->
-    <div class="form-group pseudo">
-      <div class="input-group">
-        <input
-        type="text"
-        class="form-control"
-        placeholder="Your pseudo"
-        autocomplete="off"
-        name="pseudo"
-        ngModel
-        required
-        pattern="[A-Za-z\d\.]{3,10}"
-        minlength="4"
-        #pseudo="ngModel">
-      </div>
-      <!-- Error -->
-      <span *ngIf="pseudo.errors?.['required'] && pseudo.touched" class="text-danger">
-        Please enter a pseudo
-      </span>
-    </div>
-
     <!-- Email -->
     <div class="form-group email">
       <div class="input-group">
