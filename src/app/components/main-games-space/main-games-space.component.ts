@@ -21,6 +21,7 @@ import GameList from '../../core/games.json';
 export class MainGamesSpaceComponent implements OnInit {
   games$: Observable<Game[]>;
   gamesBackup$ = new BehaviorSubject<Game[]>(GameList.slice());
+  isLoading: boolean = true;
 
   constructor(
     public dialog: MatDialog,
@@ -47,6 +48,12 @@ export class MainGamesSpaceComponent implements OnInit {
         gameData: game,
       },
     });
+  }
+
+  onImageLoad(event) {
+    if (event && event.target) {
+      console.log('OK');
+    }
   }
 }
 

@@ -12,6 +12,7 @@ import { MatInputModule } from '@angular/material/input';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { MatTableModule } from '@angular/material/table';
 import { MatSelectModule } from '@angular/material/select';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 
 import { AppComponent } from './app.component';
 import { RegisterComponent } from './components/register/register.component';
@@ -63,6 +64,7 @@ import { commentReducer } from './store/comments/comment.reducer';
     DragScrollModule,
     MatTableModule,
     MatSelectModule,
+    MatProgressSpinnerModule,
     EffectsModule.forRoot([]),
     EffectsModule.forFeature([AuthEffects, GameEffects, CommentEffects]),
     StoreModule.forRoot({
