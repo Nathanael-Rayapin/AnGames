@@ -5,80 +5,80 @@
       "title": "Final Fantasy X",
       "description": "Spira est le nom donné au monde de Final Fantasy X. Il est composé de deux continents reliés par un isthme et de quelques îles. Il y a 1000 ans, une guerre terrible avait lieu entre 2 cités machines ultra développées. A l'apogée de ce conflit, dans une course à la technologie et à la création de machine toujours plus puissantes et sophistiquées apparut Sin, une entité surnaturelle surpuissante, qui mit un frein à toute avancée technologique et à cette guerre et qui depuis dévaste Spira régulièrement.",
       "release_date": "19 juillet 2001",
-      "main_theme": "../../../assets/mp3/theme_1.mp3",
-      "background_cover": "../../../assets/img/cover_1.svg"
+      "main_theme": "assets/mp3/theme_1.mp3",
+      "background_cover": "assets/img/cover_1.svg"
     },
     {
       "id": 2,
       "title": "The Elder Scrolls V: Skyrim",
       "description": "Le jeu fait incarner au joueur un inconnu, qui a tenté de quitter le pays de Bordeciel, alors déchiré par une guerre civile qu'une invasion de dragons ne fait qu'aggraver. Le personnage incarné par le joueur se révèle être le dernier « Enfant de dragon » qui, ayant découvert ses pouvoirs, est le seul être capable de mettre fin au conflit qui ravage le pays et de vaincre les dragons, réveillés de leur sommeil millénaire par Alduin, le « Dévoreur des Mondes ».",
       "release_date": "11 novembre 2011",
-      "main_theme": "../../../assets/mp3/theme_2.mp3",
-      "background_cover": "../../../assets/img/cover_2.svg"
+      "main_theme": "assets/mp3/theme_2.mp3",
+      "background_cover": "assets/img/cover_2.svg"
     },
     {
       "id": 3,
       "title": "Cyberpunk",
       "description": "L'histoire principale traite des démêlés de V avec la corporation Arasaka, une des plus puissantes corporation de cet univers, autour de la question de la Relique, une puce électronique permettant de stocker une copie de la personnalité humaine. À cette occasion, V sera confronté aux membres de la corporation et fera la connaissance de Johnny Silverhand, un ancien adversaire d'Araska qui aura une influence déterminante sur son futur.",
       "release_date": "10 décembre 2020",
-      "main_theme": "../../../assets/mp3/theme_3.mp3",
-      "background_cover": "../../../assets/img/cover_3.svg"
+      "main_theme": "assets/mp3/theme_3.mp3",
+      "background_cover": "assets/img/cover_3.svg"
     },
     {
       "id": 4,
       "title": "Assassin's Creed Origins",
       "description": "L'Égypte vacille sous le règne de monarques inexpérimentés. Le moment est propice pour que des intrigants aux paroles de miel tentent de prendre le contrôle du pays, et pour que la Confrérie des Assassins voie le jour pour faire en sorte que cela n'arrive pas.",
       "release_date": "27 octobre 2017",
-      "main_theme": "../../../assets/mp3/theme_4.mp3",
-      "background_cover": "../../../assets/img/cover_4.svg"
+      "main_theme": "assets/mp3/theme_4.mp3",
+      "background_cover": "assets/img/cover_4.svg"
     },
     {
       "id": 5,
       "title": "No Man's Sky",
       "description": "No Man's Sky possède un lore profond et étendu, qui raconte de l'univers dans lequel évolue le joueur, cette histoire s'inspire fortement de l'hypothèse de la simulation, qui suggère que l'univers tout entier est en fait une simulation informatique. Ce lore du jeu parle de l'histoire des Geks, des Korvax et des Vy'keen, les 3 espèces dominantes de la galaxie. Elle parle aussi de l'Atlas, des sentinelles et des Voyageurs, et fait aussi référence à des faits étranges, tel qu'un monde de verre.",
       "release_date": "8 août 2016",
-      "main_theme": "../../../assets/mp3/theme_5.mp3",
-      "background_cover": "../../../assets/img/cover_5.svg"
+      "main_theme": "assets/mp3/theme_5.mp3",
+      "background_cover": "assets/img/cover_5.svg"
     },
     {
       "id": 6,
       "title": "Sunset Overdrive",
       "description": "Les joueurs parcourent le monde ouvert de la métropole de Sunset City en 2027. Ce monde dystopique est contrôlé par la société FizzCo. Le protagoniste  est un employé de l'entreprise, chargé de nettoyer le désordre laissé à la suite d'une fête organisée par FizzCo pour célébrer le lancement de leur nouvelle boisson énergétique, l'Overcharge Delirium XT. Mais tout ne se passe pas comme prévu et un défaut de fabrication du soda transforme tous les buveurs d'Overcharge en mutants nommés Overdosés.",
       "release_date": "28 octobre 2014",
-      "main_theme": "../../../assets/mp3/theme_6.mp3",
-      "background_cover": "../../../assets/img/cover_6.svg"
+      "main_theme": "assets/mp3/theme_6.mp3",
+      "background_cover": "assets/img/cover_6.svg"
     },
     {
       "id": 7,
       "title": "Tom Clancy's Ghost Recon Wildlands",
       "description": "Le jeu se déroule en Bolivie, qui est dans le jeu le plus grand fournisseur de drogues du monde, et notamment de cocaïne. Celles-ci sont contrôlées par le cartel de la drogue de Santa Blanca, une organisation puissante dont l'influence a déstabilisé la région. Devenus une menace mondiale, la montée en puissance de ces cartels de la drogue préoccupe le gouvernement des États-Unis. Par conséquent, l'armée des États-Unis envoie une unité d'opérations spéciales d'élite appelée «Ghosts» («Fantômes» en français) afin de détruire et de révéler les connexions qui existent entre le cartel de la drogue et le gouvernement local",
       "release_date": "3 février 2017",
-      "main_theme": "../../../assets/mp3/theme_7.mp3",
-      "background_cover": "../../../assets/img/cover_7.svg"
+      "main_theme": "assets/mp3/theme_7.mp3",
+      "background_cover": "assets/img/cover_7.svg"
     },
     {
       "id": 8,
       "title": "Fire Emblem",
       "description": " Sur le continent de Fódlan, on suit les péripéties de Byleth, un(e) jeune mercenaire invité(e) à devenir professeur(e) à l'Académie des officiers du monastère de Garreg Mach. Dirigé par l’Église de Seiros et son archevêque Rhea, il se trouve à la frontière de trois nations: l'Empire d'Adrestia, le Saint Royaume de Faerghus et l'Alliance de Leicester. Cet opus propose trois scénarios (dont un pouvant connaître un embranchement) selon la maison à laquelle le joueur choisit d'enseigner à l’Académie. Chacune est composée d'étudiants issus de la même nation et dirigée par l'héritier de cette dernière : les Aigles de jais, originaires d'Adrestia et menés par Edelgard ; les Lions de saphir, originaires de Faerghus et menés par Dimitri ; et les Cerfs d'or, originaires de Leicester et menés par Claude.",
       "release_date": "26 juillet 2019",
-      "main_theme": "../../../assets/mp3/theme_8.mp3",
-      "background_cover": "../../../assets/img/cover_8.svg"
+      "main_theme": "assets/mp3/theme_8.mp3",
+      "background_cover": "assets/img/cover_8.svg"
     },
     {
       "id": 9,
       "title": "God of War: Ragnarök",
       "description": "Kratos est de retour avec son fils Atreus pour de nouvelles aventures. Après avoir sauvé Midgard des Valkyries, ils doivent parcourir les Neufs Mondes de l'Yggdrasil pour tenter de sauver l'existence du Ragnarok, la fin du monde.",
       "release_date": "9 novembre 2022",
-      "main_theme": "../../../assets/mp3/theme_9.mp3",
-      "background_cover": "../../../assets/img/cover_9.svg"
+      "main_theme": "assets/mp3/theme_9.mp3",
+      "background_cover": "assets/img/cover_9.svg"
     },
     {
       "id": 10,
       "title": "Horizon Forbidden West",
       "description": "Horizon Forbidden West continue l'histoire d'Aloy, une jeune chasseresse de la tribu Nora envoyée en quête d'une mystérieuse frontière s'étendant de l'Utah jusqu'à la côte Pacifique pour trouver la source d'un mystérieux fléau qui tue tout ce qu'il infecte. Au cours de son voyage à travers les terres inexplorées de l'Ouest Interdit, elle rencontre des régions hostiles remplies de menaces naturelles et ravagées par des tempêtes massives, des ennemis dangereux et des machines mortelles, nouvelles et anciennes. Alors qu'Aloy tente d'explorer les parties les plus larges et les plus profondes de l'Occident interdit, elle découvre un vaste éventail d'écosystèmes environnementaux divers, y compris des vallées luxuriantes, des déserts secs, des montagnes enneigées, des plages tropicales et des villes en ruines, au-dessus et au-dessous de l'eau.",
       "release_date": "18 février 2022",
-      "main_theme": "../../../assets/mp3/theme_10.mp3",
-      "background_cover": "../../../assets/img/cover_10.svg"
+      "main_theme": "assets/mp3/theme_10.mp3",
+      "background_cover": "assets/img/cover_10.svg"
     }
   ]
 
