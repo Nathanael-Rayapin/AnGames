@@ -5,6 +5,9 @@
           <div class="one-card w-100 h-100" (click)="onView(game)">
             <img class="w-100 h-100" [src]="game.background_cover" (load)="onImageLoad($event)" alt="Game">
             <p class="w-100 text-white p-3 mb-0">{{ game.title }}</p>
+            <div class="loading-spinner" *ngIf="isLoading">
+              <mat-spinner></mat-spinner>
+            </div>
           </div>
         </div>
     </drag-scroll>

@@ -52,7 +52,7 @@ export class MainGamesSpaceComponent implements OnInit {
 
   onImageLoad(event) {
     if (event && event.target) {
-      console.log('OK');
+      this.isLoading = false;
     }
   }
 }
